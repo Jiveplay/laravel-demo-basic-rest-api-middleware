@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/abc', 'TestController@test_abc');
+Route::get('/xyz', 'TestController@test_xyz');
