@@ -26,6 +26,11 @@ class MyCustomMiddleware{
         // set constant
         $request->blah = date("Y-m-d H:i:s");
 
+        // deny requests without a custom header value
+        if(empty($request->my_header)){
+            return response()->json(['error' => 'No custom header value found!'], 400);
+        }
+
         // continue
         return $next($request);
     }
